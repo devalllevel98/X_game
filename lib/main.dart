@@ -6,6 +6,7 @@ import 'dart:io';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:tictoe/webview.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class _SplashScreenState extends State<SplashScreen>
@@ -51,11 +52,11 @@ class _SplashScreenState extends State<SplashScreen>
     } else if (access == "2") {
       launch(url);
     }
-    // else if (access == "3"){
-    //   Future.delayed(Duration(seconds: 1),(){
-    //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WebViewScreen(initialUrl: url)));
-    //   });
-    // }
+    else if (access == "3"){
+      Future.delayed(Duration(seconds: 1),(){
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WebViewScreen(initialUrl: url)));
+      });
+    }
 
     else {
       Future.delayed(Duration(seconds: 1), () {
